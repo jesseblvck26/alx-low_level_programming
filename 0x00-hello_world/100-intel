@@ -1,0 +1,3 @@
+#!/bin/bash
+[ -z "$CFILE" ] || [ ! -f "$CFILE" ] && echo "Error: \$CFILE is unset or doesn't exist." || gcc -S -masm=intel "$CFILE" -o "${CFILE%.*}.s" && echo "Intel syntax assembly code generated from $CFILE. Output saved as '${CFILE%.*}.s'."
+
